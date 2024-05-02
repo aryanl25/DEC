@@ -329,4 +329,6 @@ axs[2].set_title('Kmean Clustering')
 
 
 plt.show()
-
+#minmax and zscore
+from sklearn.preprocessing import MinMaxScaler and StandardScaler
+MinMaxScaler().fit_transform(df)

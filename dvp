@@ -58,3 +58,9 @@ plt.show()
 
 dataset.plot(kind='density',subplots=True,sharex=False)
 plt.show()
+
+#allgraphsns
+sb.pairplot(frm)
+
+#corheatmap
+sb.heatmap(frm.corr(), annot = True, cmap = 'inferno')

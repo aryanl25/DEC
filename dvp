@@ -1,0 +1,60 @@
+#Histogram Demo
+#Frequency  distribution  of kilometre and the car. it shows  that most of the cars have travelled between 50000 – 100000 and there are only few cars with more distance travelled 
+plt.hist(dataset['KM'],color='green',edgecolor='white',bins=6)
+plt.title('histogram of kilometer')
+plt.xlabel('Kilometer')
+plt.ylabel('frequency')
+plt.show()
+
+#scatter plot demo
+import matplotlib.pyplot as plt
+plt.scatter(dataset['Age'], dataset['FuelType'],c='red')
+plt.title("scatter plot of Age vs FuelType of the cars")
+plt.xlabel('Age(month)')
+plt.ylabel('FuelType()')
+plt.show()
+
+#demo of bar plot
+counts=[100,120,90]
+FuelType=('Petrol','Diesel','CNG')
+index=np.arange(len(FuelType))
+plt.bar(index,counts,color=['red','blue','green'])
+plt.title('bar plot of FuelType')
+plt.xlabel('FuelType')
+plt.ylabel('frequency')
+plt.xticks(index,FuelType, rotation=90)
+plt.show()
+
+import seaborn as sns
+corel=dataset.corr()
+sns.heatmap(corel, vmax=.6, square=True)
+sns.heatmap(corel, vmax=.6, annot=True,square=True)
+plt.show()
+
+
+cor=dataset.corr()
+print(cor)
+
+#demo of sctter plot with seaborn library
+sns.set(style="darkgrid")
+sns.regplot(x=dataset['CC'],y=dataset['KM'])
+plt.show()
+        
+
+sns.lmplot(x='Age',y='KM',data=dataset,fit_reg=False,hue='FuelType',legend=True,palette="Set1")
+plt.show()
+
+sns.boxplot(y=dataset['CC'])
+plt.show()
+
+sns.boxplot(x=dataset['FuelType'],y=dataset['KM'])
+plt.show()
+dataset.describe()
+#dataset.head(10)
+
+import matplotlib.pyplot as plt
+dataset.hist()
+plt.show()
+
+dataset.plot(kind='density',subplots=True,sharex=False)
+plt.show()
